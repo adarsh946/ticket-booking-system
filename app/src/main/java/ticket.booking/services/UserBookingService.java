@@ -21,8 +21,16 @@ public class UserBookingService {
 
     public UserBookingService(User user) throws IOException {
         this.user = user;
+        loadUser();
+    }
+
+    public UserBookingService() throws IOException{
+        loadUser();
+    }
+
+    public List<User> loadUser() throws IOException {
         File users = new File(USER_PATH);
-        userList = objectMapper.readValue(users, new TypeReference<List<User>>(){});
+        return objectMapper.readValue(users, new TypeReference<List<User>>(){});
     }
 
     public boolean loginUser(){
@@ -47,5 +55,12 @@ public class UserBookingService {
         objectMapper.writeValue(file, userList);
     }
 
+    public void fetchBooking(){
+        user.printTickets();
+    }
+
+    public void cancelBooking(String ticketId){
+       //        todo : complete it by myself....
+    }
 
 }
