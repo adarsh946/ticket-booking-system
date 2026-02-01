@@ -3,6 +3,7 @@ package ticket.booking.services;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.mindrot.jbcrypt.BCrypt;
+import ticket.booking.entities.Train;
 import ticket.booking.entities.User;
 import ticket.booking.util.UserServiceUtil;
 
@@ -14,7 +15,7 @@ import java.util.Optional;
 public class UserBookingService {
     private User user;
 
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
     private List<User> userList;
 
     private static final String USER_PATH = "app/src/main/java/ticket.booking/localDb/User.json";
@@ -62,5 +63,10 @@ public class UserBookingService {
     public void cancelBooking(String ticketId){
        //        todo : complete it by myself....
     }
+
+    public List<Train> fetchTrains(String source, String destination){
+
+    }
+
 
 }

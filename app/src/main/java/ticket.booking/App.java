@@ -60,6 +60,24 @@ public class  App {
                         new ArrayList<>(),
                         UUID.randomUUID().toString());
 
+                try{
+                    userBookingService = new UserBookingService(loginUser);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                break;
+
+            case 3:
+                System.out.println("Fetch bookings..");
+                userBookingService.fetchBooking();
+                break;
+            case 4:
+                System.out.println("Enter source Station: ");
+                String source = sc.next();
+                System.out.println("Enter destination Station: ");
+                String destination = sc.next();
+                userBookingService.fetchTrains(source, destination);
+
 
         }
     }

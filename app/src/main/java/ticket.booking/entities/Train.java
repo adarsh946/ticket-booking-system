@@ -48,8 +48,16 @@ public class Train {
         return trainNo;
     }
 
+    public String getTrainName(){
+        return trainName;
+    }
+
     public void setTrainNo(String trainNo){
         this.trainNo = trainNo;
+    }
+
+    public void setTrainName(String trainName){
+        this.trainName = trainName;
     }
 
     public void setTrainId(String trainId){
